@@ -58,13 +58,13 @@ function App() {
     return (
 		<div>
 			<Navbar/>
-			<div className='flex flex-col mx-12 my-14 px-12 py-10 justify-center bg-navy-blue rounded-2xl'>
-				<h1 className="text-center pb-2.5 text-3xl text-light-cream">Find Out How Many Calories You Burn Per Day!</h1>
-				<p className="text-center leading-relaxed pb-2.5 text-lg text-light-cream"><strong>BurnRate</strong> is a tool to measure of how many calories you burn per day. Knowing your BurnRate helps you to stay on track toward meeting your heath goals!</p>
+			<div className='flex flex-col mx-12 my-14 px-12 py-10 justify-center bg-navy-blue rounded-2xl min-w-83'>
+				<h1 id="header" className="font-montseratt font-light text-center pb-2.5 text-3xl text-light-cream">Find Out How Many Calories You Burn Per Day!</h1>
+				<p id="description" className="font-montseratt font-extralight text-center leading-relaxed pb-2.5 text-lg text-light-cream"><strong><em>BurnRate</em></strong> is a tool to measure of how many calories you burn per day. Knowing your BurnRate helps you to stay on track toward meeting your heath goals!</p>
 				<form onSubmit={(e) => {
 					e.preventDefault();
 					calculateTdee();
-				}} className='flex flex-col items-center'>
+				}} id="form-container" className='flex flex-col items-center min-w-59'>
 
 					<input type='number' value={age} onChange={(e) => setAge(e.target.value)} placeholder='Enter Your Age ...' required />
 
@@ -91,12 +91,14 @@ function App() {
 						))}
 					</select>
 
-					<button className="bg-cream text-3xl p-2.5 rounded-2xl" type='submit'>Calculate </button>
+					<button className="bg-cream text-3xl p-2.5 rounded-2xl mt-6 w-full font-roboto font-medium" type='submit'>Calculate </button>
 				</form>
-				<div className="flex flex-col items-center m-10 p-2.5 text-light-cream leading-relaxed text-3xl">
-					{tdee && <h2 className="">Your BurnRate is {tdee} calories/day.</h2>}
-					{tdee && <h2 className="">To gain weight you must eat {parseFloat(tdee) + 500} calories/day.</h2>}
-					{tdee && <h2 className="">To lose weight you must eat {tdee - 500} calories/day.</h2>}
+				<div className="flex flex-col items-center text-light-cream text-lg mt-6 font-montseratt">
+					<ul>
+						{tdee && <li id="output">Your BurnRate is {tdee} calories/day.</li>}
+						{tdee && <li id="output">To gain weight you must eat {parseFloat(tdee) + 500} calories/day.</li>}
+						{tdee && <li id="output">To lose weight you must eat {tdee - 500} calories/day.</li>}
+					</ul>
 				</div>
 			</div>
 		</div>

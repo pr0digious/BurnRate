@@ -32,14 +32,63 @@ input, select{
   margin: 30px;
   width: 100%;
   padding: 10px;
+  font-family: 'raleway', sans-serif;
   font-weight: 300;
+  background-color: light-cream;
   color: black;
   border: none;
   border-radius: 15px;
+  max-width: 350px;
+}
+
+button {
+  max-width: 350px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+li {
+  margin: 15px;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@media (width > 500px) {
+
+  #logo {
+    font-size: 4rem;
+  }
+
+  input, select {
+    font-size: 1.5rem;
+  }
+
+  #form-container {
+    padding-bottom: 2rem;
+  }
+
+  #header {
+    font-size: 2.5rem;
+    padding: 2rem;
+  }
+
+  #description {
+    font-size: 1.5rem;
+    padding: 2rem;
+  }
+
+  #output {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+  }
+
 }

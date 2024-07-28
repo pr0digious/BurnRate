@@ -13,6 +13,11 @@ module.exports = {
         "light-cream" : "#F8F3EA",
         "cream" : "#E6D8C7",
       },
+      fontFamily: {
+        montseratt : ["Montseratt", "sans-serif"],
+        roboto : [ "Roboto", "sans-serif" ],
+        raleway : ["Raleway", "sans-serif"],
+      }
     },
   },
   plugins: [],
