@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import React, { useState } from 'react';
 import Navbar from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/react"
 
 // Activity Level Array. Defines the physical daily activity levels users can choose.
 const activityLevels = [
@@ -58,6 +59,7 @@ function App() {
     return (
 		<div>
 			<Navbar/>
+			<Analytics />
 			<div className='flex flex-col mx-12 my-14 px-12 py-10 justify-center bg-navy-blue rounded-2xl min-w-83'>
 				<h1 id="header" className="font-montseratt font-light text-center pb-2.5 text-3xl text-light-cream">Find Out How Many Calories You Burn Per Day!</h1>
 				<p id="description" className="font-montseratt font-extralight text-center leading-relaxed pb-2.5 text-lg text-light-cream"><strong><em>BurnRate</em></strong> is a tool to measure of how many calories you burn per day. Knowing your BurnRate helps you to stay on track toward meeting your heath goals!</p>
